@@ -1,15 +1,15 @@
 
 <?php
 
-// NOTES: // los : es lo mismo que bind (?) pero no se necesita el $ xq solo necesitamos el valor de una id, no un boucle, osea un valor static
-
 class Crud extends PDO {
 
     // -------- CONSTRUCTEUR pour faire la connection à la db --------
     public function __construct() {
-
-        parent::__construct('mysql:host=localhost; dbname=clubPlante; port=3306; charset=utf8', 'e2395411', 'iLPd9vZnaB90nGRPfXXT');
         
+        // WEBDEV
+        parent::__construct('mysql:host=localhost; dbname=e2395411; port=3306; charset=utf8', 'e2395411', 'iLPd9vZnaB90nGRPfXXT');
+        
+        // MY LOCAL ONE
         //parent::__construct('mysql:host=localhost; dbname=clubPlante; port=3306; charset=utf8', 'root', '');
     }
 
@@ -133,10 +133,6 @@ class Crud extends PDO {
         } else {
             print_r ($stmt->errorInfo());
         }   
-        //delete from client where id = :id
-        //....
-        //$stmt->bindValue(":id", 12)
-        //$crud->delete('client', 12);
     }
 
 }
